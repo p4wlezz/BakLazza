@@ -94,7 +94,7 @@ jobs:
             artifact: baklazza-windows-x86_64
     steps:
       - name: Checkout source from private repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
         with:
           repository: p4wlezz/baklazza-src
           token: ${{ secrets.PAT }}
@@ -155,12 +155,12 @@ jobs:
     needs: create-release
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout public repo
-        uses: actions/checkout@v6
+- name: Sync docs to public repo
+        uses: actions/checkout@v4
         with:
           path: public
       - name: Clone private repo for docs
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
         with:
           repository: p4wlezz/baklazza-src
           token: ${{ secrets.PAT }}
