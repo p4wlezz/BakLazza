@@ -99,7 +99,7 @@ jobs:
           repository: p4wlezz/baklazza-src
           token: ${{ secrets.PAT }}
           path: src
-      - uses: dtolnay/rust-toolchain@v4
+      - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: stable
           targets: ${{ matrix.target }}
